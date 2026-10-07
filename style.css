@@ -1,0 +1,580 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(circle at 80% 10%, #102d52 0%, transparent 30%),
+        #061426;
+
+    color: #d9e6f2;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    max-width: 1100px;
+    margin: auto;
+
+    padding: 25px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    animation: fadeDown 0.8s ease;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #58b7ff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #b8c9da;
+    text-decoration: none;
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #58b7ff;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 75vh;
+
+    max-width: 950px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 70px 30px;
+
+    animation: fadeUp 1s ease;
+}
+
+.status {
+    width: fit-content;
+
+    padding: 8px 14px;
+    margin-bottom: 25px;
+
+    border: 1px solid #22527d;
+    border-radius: 30px;
+
+    color: #69c0ff;
+    background-color: rgba(24, 72, 110, 0.25);
+
+    font-size: 14px;
+}
+
+.hello {
+    color: #58b7ff;
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(48px, 8vw, 82px);
+
+    letter-spacing: -2px;
+}
+
+.hero h2 {
+    margin: 8px 0 25px;
+
+    font-size: clamp(28px, 5vw, 48px);
+
+    color: #8da8c3;
+}
+
+.hero-text {
+    max-width: 700px;
+
+    color: #aabdd0;
+
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+    margin-top: 30px;
+
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn,
+.project-btn {
+    display: inline-block;
+
+    padding: 13px 24px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.primary-btn {
+    background-color: #258be8;
+    color: white;
+}
+
+.primary-btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 25px rgba(37, 139, 232, 0.35);
+}
+
+.secondary-btn {
+    border: 1px solid #3c6489;
+
+    color: #d8e7f5;
+}
+
+.secondary-btn:hover {
+    transform: translateY(-4px);
+
+    border-color: #58b7ff;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    max-width: 950px;
+
+    margin: auto;
+
+    padding: 0 30px;
+}
+
+section {
+    margin-bottom: 100px;
+}
+
+.card {
+    padding: 35px;
+
+    border: 1px solid #173b5e;
+    border-radius: 14px;
+
+    background-color: rgba(12, 38, 65, 0.65);
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+}
+
+.card p {
+    color: #abc0d4;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   SECTION TITLES
+========================= */
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 30px;
+}
+
+.section-title span {
+    color: #58b7ff;
+
+    font-family: monospace;
+    font-size: 18px;
+}
+
+.section-title h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 30px;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 18px;
+}
+
+.skill-card {
+    padding: 25px;
+
+    border: 1px solid #173b5e;
+    border-radius: 12px;
+
+    background-color: #0b2139;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #58b7ff;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.skill-icon {
+    width: 48px;
+    height: 48px;
+
+    margin-bottom: 18px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+
+    background-color: #123a60;
+
+    color: #62bcff;
+
+    font-family: monospace;
+    font-weight: bold;
+
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+    transform: rotate(-5deg) scale(1.12);
+}
+
+.skill-card h3 {
+    color: white;
+
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: #8fa8c0;
+
+    line-height: 1.5;
+
+    margin: 0;
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.project-card {
+    margin-bottom: 25px;
+
+    padding: 32px;
+
+    border: 1px solid #173b5e;
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(16, 48, 79, 0.95),
+            rgba(8, 29, 50, 0.95)
+        );
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #58b7ff;
+}
+
+.featured {
+    border-color: #285b85;
+}
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-label {
+    color: #58b7ff;
+
+    font-size: 12px;
+
+    letter-spacing: 1.5px;
+}
+
+.project-icon {
+    color: #69c0ff;
+
+    border: 1px solid #28577e;
+    border-radius: 7px;
+
+    padding: 8px;
+
+    font-family: monospace;
+}
+
+.project-card h3 {
+    color: white;
+
+    font-size: 26px;
+
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    color: #a8bed1;
+
+    line-height: 1.7;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin: 20px 0;
+}
+
+.tags span {
+    padding: 7px 11px;
+
+    border-radius: 20px;
+
+    background-color: #123a60;
+
+    color: #86c9ff;
+
+    font-size: 13px;
+}
+
+.project-btn {
+    margin-top: 5px;
+
+    border: 1px solid #3d729e;
+
+    color: #70c2ff;
+}
+
+.project-btn:hover {
+    background-color: #123a60;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    text-align: center;
+
+    padding: 70px 20px;
+}
+
+.contact-small {
+    color: #58b7ff;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+.contact h2 {
+    color: white;
+
+    font-size: 42px;
+
+    margin: 12px 0;
+}
+
+.contact > p:not(.contact-small) {
+    max-width: 620px;
+
+    margin: 0 auto 30px;
+
+    color: #9fb4c8;
+
+    line-height: 1.7;
+}
+
+.social-links {
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 25px;
+}
+
+.social-links a {
+    color: #9fb7cd;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #58b7ff;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 30px;
+
+    border-top: 1px solid #132f4c;
+
+    color: #6f8aa3;
+
+    font-size: 13px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    nav {
+        padding: 20px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    main {
+        padding: 0 20px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        margin-bottom: 70px;
+    }
+}
